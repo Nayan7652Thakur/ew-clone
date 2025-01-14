@@ -20,14 +20,14 @@ app.use(cookieParser());
 
 // CORS Configuration
 const corsOptions = {
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Use environment variable or fallback to localhost
     credentials: true, // Enable cookies and other credentials
 };
 app.use(cors(corsOptions));
 
 // API Routes
 app.use("/api/user", userRoute);
-app.use("/api/post", postRoute); // More descriptive route
+app.use("/api/post", postRoute);
 
 // Start Server
 const PORT = process.env.PORT || 8000; // Fallback port
