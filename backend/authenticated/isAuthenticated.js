@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import dotenv from "dotenv";
 
 dotenv.config({
-    path:'./.env'
+    path:'.env'
 })
 
 const isAuthenticated = async (req,res,next) => {
