@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  
+  background-color: #74EBD5;
+  background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+
+}
+
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* Define the keyframe animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animations */
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.8s ease-out;
+}
+
+/* Optional: For smoother transitions on focus, buttons, and inputs */
+input:focus,
+textarea:focus,
+button:hover {
+  transition: all 0.3s ease;
+}
+
+/* Styling for file input */
+.file-input {
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Styling the button */
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Smooth Scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframe Animations for Fade-in and Slide-up */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Animation Classes */
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.8s ease-out;
+}
+
+/* Hover Effects for Profile and Buttons */
+.profile-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-hover:hover {
+  background-color: #ff5722;
+  /* Or any color */
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+
+
+
+
