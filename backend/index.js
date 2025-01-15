@@ -7,7 +7,7 @@ import postRoute from "./routes/postRoute.js";
 import path from "path";
 import mongoose from "mongoose";
 
-dotenv.config(); // Load environment variables
+dotenv.config();
 
 // Connect to MongoDB
 mongoose
