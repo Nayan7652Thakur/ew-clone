@@ -13,13 +13,13 @@ const CreatePost = () => {
 
     const navigate = useNavigate()
     const { user } = useSelector((store) => store.user);
-useEffect(() => {
-    if (user === null) {
-      navigate("/login")
-    }
-  }, [])
+    useEffect(() => {
+        if (user === null) {
+            navigate("/login")
+        }
+    }, [])
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [imagePreview, setImagePreview] = useState();
     const [description, setDescription] = useState('');
     const [file, setFile] = useState("")
