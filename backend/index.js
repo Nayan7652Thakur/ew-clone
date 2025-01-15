@@ -39,10 +39,10 @@ app.use("/api/user", userRoute);
 app.use("/api/post", postRoute);
 
 
-app.use(express.static(path.join(__dirname, '/demo/dist')))
+app.use(express.static(path.join(__dirname, '/frontend/dist')))
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'demo', 'dist', 'index.html'))
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
 })
 
 // Error Handling Middleware
