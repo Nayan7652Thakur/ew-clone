@@ -1,16 +1,23 @@
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./database/mongoDb.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRoute from "./routes/userRoute.js";
 import postRoute from "./routes/postRoute.js";
 import path from "path";
+import mongoose from "mongoose";
 
 dotenv.config(); // Load environment variables
 
 // Connect to MongoDB
-connectDB();
+mongoose
+.connect(process.env.MONGO_URL)
+.then(() => {
+  console.log("Connected to MongoDB");
+})
+.catch((err) => {
+  console.log(err);
+});
 
 const app = express();
 
