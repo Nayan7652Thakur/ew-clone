@@ -6,14 +6,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Posts = () => {
+
     const { user } = useSelector(store => store.user)
+
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (user === null) {
+            navigate("/login")
+        }
+    }, [])
+
     const { allPost } = useSelector(store => store.post)
     const posts = allPost.posts
     console.log(posts);
 
 
-    
-    const navigate = useNavigate()
     return (
         <div className='max-w-xs mx-auto items-center justify-center'>
             <div className='flex flex-col gap-6'>
@@ -23,7 +32,7 @@ const Posts = () => {
                             <div className='flex ml-3 gap-6 items-center mt-3'>
                                 <div>
                                     <img
-                                        src={post?.user?.profilePicture|| 'https://steamuserimages-a.akamaihd.net/ugc/1698408203615263339/2FD09AE171B2A3EA60D89DC46CC9E08E683CD381/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'}
+                                        src={post?.user?.profilePicture || 'https://steamuserimages-a.akamaihd.net/ugc/1698408203615263339/2FD09AE171B2A3EA60D89DC46CC9E08E683CD381/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'}
                                         alt="Profile"
                                         onClick={() => navigate('/profile')}
                                         className="w-12 h-12 rounded-full cursor-pointer object-cover"

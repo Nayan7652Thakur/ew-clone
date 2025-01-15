@@ -12,17 +12,23 @@ import { MdLocalLibrary } from "react-icons/md";
 import { RiShareCircleFill } from "react-icons/ri";
 
 const Home = () => {
-  useGetAllPost()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const { user } = useSelector(store => store.user);
+  console.log(user);
+
+
+  useEffect(() => {
+    if (user === null) {
+      navigate("/login")
+    }
+  }, [])
+
+  useGetAllPost()
 
 
   const { allPost } = useSelector(store => store.post);
 
-  console.log(allPost);
-  
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
 
 
   const logout = async () => {
@@ -33,7 +39,7 @@ const Home = () => {
       // dispatch(getOtherUsers(null));
       // dispatch(getMyProfile(null));
       navigate('/login');
-       toast.success(res.data.message);
+      toast.success(res.data.message);
     } catch (error) {
       console.log(error);
     }
@@ -62,23 +68,23 @@ const Home = () => {
               to={`/profile/${user?._id}`}
               className="bg-orange-500 rounded-md border border-lime-600 p-2 text-center w-full block flex items-center justify-center"
             >
-            <CgProfile size={20} className='mr-2'/>  About Me
+              <CgProfile size={20} className='mr-2' />  About Me
             </Link>
 
             <Link
               className="flex items-center justify-center bg-green-700 mt-2 text-white rounded-md border border-lime-600 p-2 text-center w-full block cursor-pointer"
-             to={`/${user?._id}/users`}
+              to={`/${user?._id}/users`}
             >
-             <span><RiShareCircleFill size={20} className='mr-2'/></span>  AllUsers
+              <span><RiShareCircleFill size={20} className='mr-2' /></span>  AllUsers
             </Link>
 
             <Link
               className="flex items-center justify-center bg-red-700 mt-2 text-white rounded-md border border-lime-600 p-2 text-center w-full block cursor-pointer"
               onClick={logout}
             >
-             <span><CiLogout size={20} className='mr-2'/></span>  Logout
+              <span><CiLogout size={20} className='mr-2' /></span>  Logout
             </Link>
-            
+
           </div>
         </div>
 

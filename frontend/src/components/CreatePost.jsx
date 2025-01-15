@@ -6,14 +6,23 @@ import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import { getAllPosts } from '../redux/postSlice';
 import { Loader2 } from 'lucide-react';
+import { useSelector } from 'react-redux';
 
 
 const CreatePost = () => {
+
+    const navigate = useNavigate()
+    const { user } = useSelector((store) => store.user);
+useEffect(() => {
+    if (user === null) {
+      navigate("/login")
+    }
+  }, [])
+
     const [loading, setLoading] = useState(true)
     const [imagePreview, setImagePreview] = useState();
     const [description, setDescription] = useState('');
     const [file, setFile] = useState("")
-    const navigate = useNavigate()
 
     // Handle image file input
     const fileHandler = async (e) => {

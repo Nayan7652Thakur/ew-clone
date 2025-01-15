@@ -5,8 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const EditProfile = () => {
+
   const { user } = useSelector((store) => store.user);
   const navigate = useNavigate();
+
+useEffect(() => {
+    if (user === null) {
+      navigate("/login")
+    }
+  }, [])
+
 
   const { profile } = useSelector((store) => store.user);
 

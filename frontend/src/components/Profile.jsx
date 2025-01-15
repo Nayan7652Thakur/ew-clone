@@ -9,15 +9,19 @@ import { VscAdd } from "react-icons/vsc";
 import useGetMyPost from '../hooks/useGetMyPost';
 
 const Profile = () => {
+    const navigate = useNavigate();
     const { user, profile } = useSelector(store => store.user);
     const { myPost } = useSelector(store => store.post);
 
-    console.log(myPost);
 
+    useEffect(() => {
+        if (user === null) {
+            navigate("/login")
+        }
+    }, [])
 
 
     const { id } = useParams();
-    const navigate = useNavigate();
 
     console.log(profile);
     console.log(user);
@@ -77,9 +81,9 @@ const Profile = () => {
             <div className='flex justify-between items-center'>
                 <h1 className="text-5xl">Posts</h1>
                 {
-                      user?._id === profile?.user?._id && (
-                          <Link to={`/profile/${id}/create`} className='mr-3 cursor-pointer'><VscAdd size={25} /></Link>
-                      )
+                    user?._id === profile?.user?._id && (
+                        <Link to={`/profile/${id}/create`} className='mr-3 cursor-pointer'><VscAdd size={25} /></Link>
+                    )
                 }
             </div>
 
@@ -103,9 +107,9 @@ const Profile = () => {
                                 </div>
                                 <div>
                                     {
-                                         user?._id === profile?.user?._id && (
-                                             <MdDelete size={'25'} className='cursor-pointer' />
-                                         )
+                                        user?._id === profile?.user?._id && (
+                                            <MdDelete size={'25'} className='cursor-pointer' />
+                                        )
                                     }
                                 </div>
                             </div>

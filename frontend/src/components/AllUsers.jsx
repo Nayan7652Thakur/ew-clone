@@ -5,10 +5,17 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
 const AllUsers = () => {
+
     const navigate = useNavigate()
+    const { user } = useSelector((store) => store.user);
+    useEffect(() => {
+        if (user === null) {
+            navigate("/login")
+        }
+    }, [])
+
     const params = useParams()
     const id = params.id
-    const { user } = useSelector((store) => store.user);
 
     useEffect(() => {
         if (id !== user?._id) {
