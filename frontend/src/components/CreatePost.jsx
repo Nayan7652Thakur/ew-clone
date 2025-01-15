@@ -41,7 +41,7 @@ useEffect(() => {
         if (imagePreview) formData.append("image", file)
         try {
             setLoading(true)
-            const res = await axios.post("http://localhost:2000/api/post/create", formData, {
+            const res = await axios.post("https://ew-clone.onrender.com/api/post/create", formData, {
                 headers: {
                     'Content-Type': 'multipart/formdata'
                 },

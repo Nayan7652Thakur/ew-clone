@@ -33,7 +33,7 @@ const Home = () => {
 
   const logout = async () => {
     try {
-      const res = await fetch('http://localhost:2000/api/user/logout', { method: 'GET' });
+      const res = await fetch('https://ew-clone.onrender.com/api/user/logout', { method: 'GET' });
       // Your dispatch and navigation logic here
       dispatch(getUser(null));
       // dispatch(getOtherUsers(null));

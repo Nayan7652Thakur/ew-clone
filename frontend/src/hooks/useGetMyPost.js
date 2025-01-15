@@ -7,7 +7,7 @@ const dispatch = useDispatch()
     useEffect(() => {
         const myPost = async () => {
             try {
-                const res = await fetch(`http://localhost:2000/api/post/getmypost/${id}`, {
+                const res = await fetch(`https://ew-clone.onrender.com/api/post/getmypost/${id}`, {
                     method: "GET",
                     credentials: 'include'
                 })

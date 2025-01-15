@@ -9,7 +9,7 @@ const useGetAllPost = () => {
     useEffect(() => {
         const getAllPost = async () => {
             try {
-                const res = await fetch("http://localhost:2000/api/post/getallpost", {
+                const res = await fetch("https://ew-clone.onrender.com/api/post/getallpost", {
                     method: "GET",
                     credentials: 'include', // Include cookies for authentication
                 });

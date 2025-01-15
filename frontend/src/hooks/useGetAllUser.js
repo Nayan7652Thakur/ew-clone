@@ -7,7 +7,7 @@ const useGetAllUser = () => {
     useEffect(() => {
         const getAllUser = async () => {
             try {
-                const res = await fetch("http://localhost:2000/api/user/users", {
+                const res = await fetch("https://ew-clone.onrender.com/api/user/users", {
                     method: "GET",
                     credentials: 'include'
                 })

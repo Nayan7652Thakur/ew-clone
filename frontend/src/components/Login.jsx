@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const res = await fetch('http://localhost:2000/api/user/login', {
+      const res = await fetch('https://ew-clone.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

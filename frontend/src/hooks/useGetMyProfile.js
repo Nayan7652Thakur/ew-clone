@@ -7,7 +7,7 @@ const dispatch = useDispatch()
     useEffect(() => {
         const fetchMyProfile = async () => {
             try {
-                const res = await fetch(`http://localhost:2000/api/user/profile/${id}`, {
+                const res = await fetch(`https://ew-clone.onrender.com/api/user/profile/${id}`, {
                     method: 'GET',
                     credentials: 'include'
                 },)

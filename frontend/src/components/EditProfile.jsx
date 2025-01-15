@@ -64,7 +64,7 @@ useEffect(() => {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:2000/api/user/profile/${user?._id}/edit`,
+        `https://ew-clone.onrender.com/api/user/profile/${user?._id}/edit`,
         {
           method: "POST",
           body: formData,
