@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import userRoute from './routes/userRoute.js';
 import postRoute from './routes/postRoute.js';
+import path from 'path';
 
 dotenv.config(); // Load environment variables
 
