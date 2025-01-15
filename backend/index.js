@@ -11,13 +11,13 @@ dotenv.config();
 
 // Connect to MongoDB
 mongoose
-.connect(process.env.MONGO_URL)
-.then(() => {
-  console.log("Connected to MongoDB");
-})
-.catch((err) => {
-  console.log(err);
-});
+    .connect(process.env.MONGO_URL)
+    .then(() => {
+        console.log("Connected to MongoDB");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 const app = express();
 
@@ -38,13 +38,12 @@ app.use(cors(corsOptions));
 app.use("/api/user", userRoute);
 app.use("/api/post", postRoute);
 
-// Serve Frontend
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "/frontend/dist")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-    });
-}
+
+app.use(express.static(path.join(__dirname, '/demo/dist')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'demo', 'dist', 'index.html'))
+})
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
