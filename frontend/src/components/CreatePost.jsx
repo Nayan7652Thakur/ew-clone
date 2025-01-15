@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineUpload } from 'react-icons/ai'; // Importing the upload icon
 import { toast } from 'react-toastify';
 import { readFileAsDataURL } from '../lib/utils';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaRegHeart, FaRegComment } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 import { Link, useNavigate, useParams } from 'react-router-dom';
