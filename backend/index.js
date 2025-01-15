@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 // CORS Configuration
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Use environment variable or fallback
+    origin: "http://localhost:5173", // Use environment variable or fallback
     credentials: true, // Enable cookies and other credentials
 };
 app.use(cors(corsOptions));
